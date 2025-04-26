@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Portfolis</title>
+<title>Man Portfolio</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="formas_css.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -79,8 +80,28 @@
         <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
       </div>
     </div>
+  </div><br><br>
+  
+  <div class="w3-container">
+    <h1><b>HTML Kontroldarbi</b></h1>
+    </div>
+  <div class="w3-row-padding">
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="foto/excelLogo.webp" alt="Norway" style="height: 10em; width: 10em;" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <a href="KD_lapas/KD_skola.html"><p><b>HTML darba I daļa</b></p></a>
+        <p>Spēja ievērot instrukcijas HTML un CSS koda rakstīšanai.</p>
+      </div>
+    </div>
+     <div class="w3-third w3-container w3-margin-bottom">
+      <img src="foto/excelLogo.webp" alt="Norway" style="height: 10em; width: 10em;" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+          <p>HTML darba II daļa</p>
+          <ul><li><b><a href="KD_lapas/KD_mervienibas.html">mervienibas.html</a></b></li><li><b><a href="KD_lapas/KD_dzd.html">dzd.html</a></b></li></ul>
+        <p>Minimāls HTML/CSS, pamatā darbošanās ar JS.</p>
+      </div>
+    </div>
   </div>
-
   <!-- Images of Me -->
   <div class="w3-row-padding w3-padding-16" id="about">
     <div class="w3-col m6">
@@ -98,7 +119,16 @@
     
 <!-- End page content -->
 </div>
-
+  
+  <div class="logbook">
+  <h2>Atsauksmes</h2>
+  <form id="logForm">
+      <textarea id="visitorMessage" placeholder="Komentāri? Uzlabojumi? Iespējami papildinājumi? Raksti te!" required></textarea>
+    <button class="poga" type="submit">Submit</button>
+    <div class="message" id="confirmationMessage">Thank you! Your response has been submitted.</div>
+  </form>
+  </div><br><br><br>
+  
 <script>
 // Script to open and close sidebar
 function w3_open() {
@@ -110,6 +140,16 @@ function w3_close() {
     document.getElementById("mySidebar").style.display = "none";
     document.getElementById("myOverlay").style.display = "none";
 }
+const form = document.getElementById('logForm');
+  const messageBox = document.getElementById('visitorMessage');
+  const confirmation = document.getElementById('confirmationMessage');
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form from reloading the page
+    messageBox.style.display = 'none'; // Hide the textarea
+    form.querySelector('button').style.display = 'none'; // Hide the submit button
+    confirmation.style.display = 'block'; // Show confirmation message
+  });
 </script>
 
 </body>

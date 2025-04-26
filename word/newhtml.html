@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Visitor Logbook</title>
+  <style>
+    
+    .logbook {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 400px;
+      margin: 0 auto;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    textarea {
+      width: 100%;
+      height: 100px;
+      padding: 10px;
+      margin-bottom: 10px;
+      resize: vertical;
+    }
+    .poga {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .poga:hover {
+      background-color: #45a049;
+    }
+    .message {
+      margin-top: 15px;
+      color: green;
+      font-weight: bold;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="logbook">
+  <h2>Visitor Logbook</h2>
+  <form id="logForm">
+    <textarea id="visitorMessage" placeholder="Leave your message here..." required></textarea>
+    <button class="poga" type="submit">Submit</button>
+    <div class="message" id="confirmationMessage">Thank you! Your response has been submitted.</div>
+  </form>
+</div>
+
+<script>
+  const form = document.getElementById('logForm');
+  const messageBox = document.getElementById('visitorMessage');
+  const confirmation = document.getElementById('confirmationMessage');
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form from reloading the page
+    messageBox.style.display = 'none'; // Hide the textarea
+    form.querySelector('button').style.display = 'none'; // Hide the submit button
+    confirmation.style.display = 'block'; // Show confirmation message
+  });
+</script>
+
+</body>
+</html>
