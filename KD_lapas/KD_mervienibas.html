@@ -32,31 +32,31 @@
 
   <form>
     <p>
-      <input type="text" id="gbInput" value="2"> GB =
+      <input type="text" id="gbSkaits" value="2"> GB =
     </p>
 
     <p>
-      <button type="button" onclick="convertToMB()">Izteikt megabaitos</button>
-      <input type="text" id="mbOutput" readonly> MB
+      <button type="button" onclick="izteiktMB()">Izteikt megabaitos</button>
+      <input type="text" id="mbRezultats" readonly> MB
     </p>
 
     <p>
-      <button type="button" onclick="convertToMiB()">Izteikt mibibaitos</button>
-      <input type="text" id="mibOutput" readonly> MiB
+      <button type="button" onclick="izteiktMiB()">Izteikt mibibaitos</button>
+      <input type="text" id="mibRezultats" readonly> MiB
     </p>
   </form>
 
   <script>
-    function convertToMB() {
-      const gb = parseFloat(document.getElementById("gbInput").value);
+    function izteiktMB() {
+      const gb = parseFloat(document.getElementById("gbSkaits").value);
       const mb = gb * 1000;
-      document.getElementById("mbOutput").value = mb;
+      document.getElementById("mbRezultats").value = mb;
     }
 
-    function convertToMiB() {
-      const gb = parseFloat(document.getElementById("gbInput").value);
+    function izteiktMiB() {
+      const gb = parseFloat(document.getElementById("gbSkaits").value);
       const mib = gb * 1024;
-      document.getElementById("mibOutput").value = mib;
+      document.getElementById("mibRezultats").value = mib;
     }
   </script>
 
